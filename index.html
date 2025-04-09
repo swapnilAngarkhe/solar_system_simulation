@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three.js Solar System - More Planets!</title>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #000; }
+        canvas { display: block; }
+        /* Container for CSS2D labels - positioned over the canvas */
+        #css2d-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Prevent labels from blocking mouse interaction with the canvas */
+            pointer-events: none;
+            /* Ensure it's above the WebGL canvas (optional, usually default) */
+            z-index: 10;
+        }
+        /* Styling for the planet labels */
+        .planet-label {
+            color: white;
+            font-family: sans-serif;
+            font-size: 10px; /* Keep labels small */
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+            padding: 2px 5px;
+            border-radius: 3px;
+            /* Enable pointer events *only* for the label itself if needed, */
+            /* but generally keep off via container */
+            /* pointer-events: auto; */
+        }
+    </style>
+</head>
+<body>
+    <div id="css2d-container"></div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.163.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.163.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
